@@ -21,6 +21,10 @@ O Objetivo deste repositório é apresentar técnicas de contigência e alta dis
 
 Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant como orquestrador.
 
+Link para download:
+
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads "VirtualBox - Download")
+
+[Vagrant](https://www.vagrantup.com/downloads "Vagrant - Download")
 
 ![oracle site!](images/01.png "oracle site")
