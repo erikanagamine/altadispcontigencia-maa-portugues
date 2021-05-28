@@ -24,7 +24,6 @@ Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant com
 Link para download:
 
 [Virtualbox](https://www.virtualbox.org/wiki/Downloads "VirtualBox - Download")
-
 [Vagrant](https://www.vagrantup.com/downloads "Vagrant - Download")
 
 ![oracle site!](images/01.png "oracle site")
