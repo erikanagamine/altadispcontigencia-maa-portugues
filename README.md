@@ -25,7 +25,10 @@ Para realização desta atividade, você precisará de um computador:
 - Windows
 - Linux
 - MacOS
-- 
+
+## Espaço livre:
+- Depende da atividade escolhida
+
 
 Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant como orquestrador.
 
