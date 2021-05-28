@@ -26,7 +26,6 @@ Link para download: [Virtualbox](https://www.virtualbox.org/wiki/Downloads "Virt
 
 Além disso para procedimentos de alta disponibilidade e contingência, utilizaremos:
 
-- Oracle Database: Para procedimentos de banco de dados Oracle
-[Oracle Database](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html "Oracle Database - Download")
+- [Oracle Database](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html "Oracle Database - Download"): Caso você queira fazer a tarefa para procedimentos de banco de dados.
 
 ![oracle site!](images/01.png "oracle site")
