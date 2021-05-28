@@ -24,4 +24,9 @@ Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant com
 Link para download: [Virtualbox](https://www.virtualbox.org/wiki/Downloads "VirtualBox - Download")
 [Vagrant](https://www.vagrantup.com/downloads "Vagrant - Download")
 
+Além disso para procedimentos de alta disponibilidade e contingência, utilizaremos:
+
+- Oracle Database: Para procedimentos de banco de dados Oracle
+[Oracle Database](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html "Oracle Database - Download")
+
 ![oracle site!](images/01.png "oracle site")
