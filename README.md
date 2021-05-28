@@ -20,7 +20,8 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 # 1. Pré-requisitos e Downloads
 
 Para realização desta atividade, você precisará de um computador:
-##Sistema Operacional:
+
+## Sistema Operacional:
 - Windows
 - Linux
 - MacOS
