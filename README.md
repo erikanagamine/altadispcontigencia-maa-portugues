@@ -54,7 +54,7 @@ Além disso para as atividades que vamso realizar nos próximos pontos, faça o 
 
 Aqui deixo uma referência de comandos básicos de vagrant. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
-Comando | Para que serve
+Comando a ser utilizado no prompt | Para que serve
 ------------ | -------------
 vagrant init | Content from cell 2
 vagrant ssh | acessa a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina host você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
