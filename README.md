@@ -68,9 +68,13 @@ Obs. faça o download ou clone do repositório.
 
 b) O próximo passo é para ir ao diretório de cada uma das atividades. Antes de começar quaisquer atividade será mencionado o diretório que você deverá ir. Apenas para a primeira atividade de ambientação do vagrant criaremos uma infraestrutura basica com alguns conceitos.
 
-c) (opcional) caso você deseje alterar as configurações básicas do Virtualbox como área default para criação de vms, dentro
+c) (opcional) caso você deseje alterar as configurações básicas do Virtualbox como área padrão para criação de vms, dentro do Virtualbox:
+
 ![Configurações Virtualbox!](images/mudando_preferencias.JPG "oracle site")
-https://github.com/erikanagamine/bd-altadispcontigencia-maa-portugues/blob/2c0b883d08d8232c1eeaf9e75079cb6203bb7093/images/mudando_preferencias.JPG
+
+![Configurações Virtualbox!](images/mudando_preferencias2.JPG "oracle site")
+
+
 
 <a name="3"></a>
 # 3. Vagrant
