@@ -7,7 +7,7 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 1. [ Pré-requisitos ](#1)
 2. [ Configurações básicas ](#2)
 3. [ Vagrant ](#3)
-4. [ IaC:LAMP ] (#4)
+4. [ LAMP ] (#4)
 5. 
 6. 
 7. 
@@ -53,18 +53,15 @@ a) Realize o clone do repositório ou descompacte o download do repositório do 
 comando para clonar caso tenha instalado o git:
 git clone https://github.com/oracle/vagrant-projects
 
-Obs. faça
+Obs. faça o download ou clone do repositório.
 
-Change into the vagrant-projects/OracleLinux/7 directory
-Run vagrant status to check Vagrantfile status and possible plugin(s) required
-Run vagrant up
-The first time you run this it will provision everything and may take a while. Ensure you have a good internet connection!
-The Vagrant file allows for customization.
-SSH into the VM either by using vagrant ssh If required, by Vagrantfile you can also setup ssh port forwarding.
-You can shut down the VM via the usual vagrant halt and the start it up again via vagrant up.
+b) O próximo passo é para ir ao diretório de cada uma das atividades. Antes de começar quaisquer atividade será mencionado o diretório que você deverá ir. Apenas para a primeira atividade de ambientação do vagrant criaremos uma infraestrutura basica com alguns conceitos.
+
 
 <a name="3"></a>
 # 3. Vagrant
+
+Após a insta
 
 Aqui deixo uma referência de comandos básicos de vagrant. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
@@ -77,4 +74,16 @@ vagrant halt | realiza o desligamento de toda a sua infraestrutura provisionada 
 vagrant ssh | para acessar a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina hospedeira você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
 
 
+<a name="4"></a>
+# 4. LAMP
+
+O objetivo
+
+Vá para o diretório da descompactado vagrant-projects/OracleLinux/7 
+Run vagrant status to check Vagrantfile status and possible plugin(s) required
+Run vagrant up
+The first time you run this it will provision everything and may take a while. Ensure you have a good internet connection!
+The Vagrant file allows for customization.
+SSH into the VM either by using vagrant ssh If required, by Vagrantfile you can also setup ssh port forwarding.
+You can shut down the VM via the usual vagrant halt and the start it up again via vagrant up.
 
