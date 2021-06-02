@@ -35,6 +35,10 @@ Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant com
 
 Link para download: [Virtualbox](https://www.virtualbox.org/wiki/Downloads "VirtualBox - Download")
 [Vagrant](https://www.vagrantup.com/downloads "Vagrant - Download")
+[Opcional: GIT](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git "Git - Download")
+
+Caso você não faça o download do GIT, baixe o repositório base oficial: https://github.com/oracle/vagrant-projects
+
 
 
 Além disso para procedimentos de alta disponibilidade e contingência, faça o download dos binários para fazer executar o passo a passo que você irá executar (aqui descreverei os links de referência mas o download deve ser apropriado para o Sistema operacional das suas máquinas virtuais:
