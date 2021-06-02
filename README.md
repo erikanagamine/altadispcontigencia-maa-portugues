@@ -72,7 +72,7 @@ c) (opcional) caso você deseje alterar as configurações básicas do Virtualbo
 
 ![Configurações Virtualbox!](images/mudando_preferencias.JPG "oracle site")
 
-![Configurações Virtualbox!](images/mudando_preferencias2.JPG "oracle site")
+![Configurações Virtualbox!](images/mudando_preferencias-2.JPG "oracle site")
 
 
 
