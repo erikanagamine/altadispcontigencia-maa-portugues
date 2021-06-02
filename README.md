@@ -61,7 +61,7 @@ Os demais binários baixados estarão presentes nas máquinas virtuais criadas.
 ----
 <!-- blank line -->
 
-[ Return to top ](#top)
+[ Retornar para o menu ](#top)
 
 <a name="2"></a>
 # 2. Configurações básicas
@@ -84,7 +84,7 @@ c) (opcional) caso você deseje alterar as configurações básicas do Virtualbo
 ----
 <!-- blank line -->
 
-[ Return to top ](#top)
+[ Retornar para o menu ](#top)
 
 <a name="3"></a>
 # 3. Vagrant
@@ -110,7 +110,7 @@ vagrant plugin install vagrant-vbguest
 ----
 <!-- blank line -->
 
-[ Return to top ](#top)
+[ Retornar para o menu ](#top)
 
 <a name="4"></a>
 # 4. Load Balancer
@@ -119,7 +119,7 @@ vagrant plugin install vagrant-vbguest
 ----
 <!-- blank line -->
 
-[ Return to top ](#top)
+[ Retornar para o menu ](#top)
 
 <a name="5"></a>
 # 5. LAMP
@@ -138,5 +138,5 @@ You can shut down the VM via the usual vagrant halt and the start it up again vi
 ----
 <!-- blank line -->
 
-[ Return to top ](#top)
+[ Retornar para o menu ](#top)
 
