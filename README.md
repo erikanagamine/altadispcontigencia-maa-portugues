@@ -7,19 +7,19 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 1. [ Pré-requisitos ](#1)
 2. [ Configurações básicas ](#2)
 3. [ Vagrant ](#3)
-4. [ LAMP ] (#4)
-5. 
-6. 
-7. 
-8. 
-9. 
-10. 
+4. [ Load Balancer ](#4)
+5. [ LAMP ](#5)
+6. [ Oracle Database: Backup, Restore e outras técnicas ](#6)
+7. [ Oracle Database: Data Guard ](#7)
+8. [ Oracle Database: RAC ](#8)
+9. [ Microservices, Serveless ](#9)
+10. [ Cloud ](#9)
 
 
 <a name="1"></a>
 # 1. Pré-requisitos
 
-Para realização desta atividade, você precisará de um computador:
+Para realização desta atividade, você precisará de acesso a internet (de preferencia em um computador sem VPN ou proxy - faremos muitos downloads via internet durante a montagem de máquinas virtuais - caso for o caso - ou acesso a cloud) e um computador:
 
 ## Sistema Operacional:
 - Windows
@@ -47,7 +47,7 @@ Além disso para as atividades que vamso realizar nos próximos pontos, faça o 
 - [hammerDB](https://hammerdb.com/download.html "HammerDB - Download"): Para teste de carga.
 
 ## Instalação
-Deverá ser instalado apenas o que for da sua máquina hospedeira (onde ficarão as VMs, ou seja:
+Deverá ser instalado apenas o que for da sua máquina hospedeira (onde ficarão as VMs), ou seja:
 
 - Virtualbox
 
@@ -55,7 +55,7 @@ Deverá ser instalado apenas o que for da sua máquina hospedeira (onde ficarão
 
 - (Opcional) Git. Caso não queira fazer a instalação do GIT, você pode fazer o download do repositório somente
 
-Os demais binários baixados deverão
+Os demais binários baixados estarão presentes nas máquinas virtuais criadas.
 
 <a name="2"></a>
 # 2. Configurações básicas
@@ -75,13 +75,12 @@ c) (opcional) caso você deseje alterar as configurações básicas do Virtualbo
 ![Configurações Virtualbox!](images/mudando_preferencias-2.JPG "oracle site")
 
 
-
 <a name="3"></a>
 # 3. Vagrant
 
-Após a instalação do Vagrant
+Aqui deixo uma referência de comandos básicos de vagrant. Estes comandos são
 
-Aqui deixo uma referência de comandos básicos de vagrant. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
+. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
 Comando a ser utilizado no prompt | Utilidade
 ------------ | -------------
@@ -90,10 +89,18 @@ vagrant up | executa código para criação das suas VMs ou inicia sua infra-est
 vagrant destroy | apaga todas suas VMs contidas no código que foi executado
 vagrant halt | realiza o desligamento de toda a sua infraestrutura provisionada como código.
 vagrant ssh | para acessar a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina hospedeira você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
+vagrant plugin install | para instalação de plugins no vagrant 
 
+Após a instalação do Vagrant é interessante baixar o pack de extensão de servidores guest do VirtualBox, assim suas máquinas virtuais já estarão com as boas práticas aplicadas:
+```
+vagrant plugin install vagrant-vbguest
+```
 
 <a name="4"></a>
-# 4. LAMP
+# 4. Load Balancer
+
+<a name="5"></a>
+# 5. LAMP
 
 O objetivo
 
