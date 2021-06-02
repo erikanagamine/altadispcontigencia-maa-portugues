@@ -57,6 +57,12 @@ Deverá ser instalado apenas o que for da sua máquina hospedeira (onde ficarão
 
 Os demais binários baixados estarão presentes nas máquinas virtuais criadas.
 
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Return to top ](#top)
+
 <a name="2"></a>
 # 2. Configurações básicas
 
@@ -74,6 +80,11 @@ c) (opcional) caso você deseje alterar as configurações básicas do Virtualbo
 
 ![Configurações Virtualbox!](images/mudando_preferencias-2.JPG "oracle site")
 
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Return to top ](#top)
 
 <a name="3"></a>
 # 3. Vagrant
@@ -95,9 +106,20 @@ Após a instalação do Vagrant é interessante baixar o pack de extensão de se
 ```
 vagrant plugin install vagrant-vbguest
 ```
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Return to top ](#top)
 
 <a name="4"></a>
 # 4. Load Balancer
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Return to top ](#top)
 
 <a name="5"></a>
 # 5. LAMP
@@ -111,4 +133,10 @@ The first time you run this it will provision everything and may take a while. E
 The Vagrant file allows for customization.
 SSH into the VM either by using vagrant ssh If required, by Vagrantfile you can also setup ssh port forwarding.
 You can shut down the VM via the usual vagrant halt and the start it up again via vagrant up.
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Return to top ](#top)
 
