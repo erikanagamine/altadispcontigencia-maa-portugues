@@ -6,7 +6,7 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 
 1. [ Pré-requisitos ](#1)
 2. [ Configurações básicas ](#2)
-3. 
+3. [ Vagrant ](#3)
 4. 
 5. 
 6. 
@@ -54,10 +54,13 @@ Além disso para as atividades que vamso realizar nos próximos pontos, faça o 
 
 Aqui deixo uma referência de comandos básicos de vagrant. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
-Comando a ser utilizado no prompt | Para que serve
+Comando a ser utilizado no prompt | Utilidade
 ------------ | -------------
-vagrant init | Content from cell 2
-vagrant ssh | acessa a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina host você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
+vagrant init | inicializa processos do vagrant no sistema operacional hospedeiro. Deve ser utilizado apenas na primeira instalação
+vagrant up | executa código para criação das suas VMs
+vagrant destroy | apaga todas suas VMs contidas no código que foi executado
+vagrant halt | realiza o desligamento de toda a sua infraestrutura provisionada como código.
+vagrant ssh | para acessar a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina hospedeira você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
 
 vagrant init
 vagrant
