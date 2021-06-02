@@ -74,11 +74,13 @@ Obs. faça o download ou clone do repositório.
 
 b) O próximo passo é para ir ao diretório de cada uma das atividades. Antes de começar quaisquer atividade será mencionado o diretório que você deverá ir. Apenas para a primeira atividade de ambientação do vagrant criaremos uma infraestrutura basica com alguns conceitos.
 
-c) (opcional) caso você deseje alterar as configurações básicas do Virtualbox como área padrão para criação de vms, dentro do Virtualbox:
+c) (opcional) caso você deseje alterar as configurações básicas do Virtualbox:
 
-![Configurações Virtualbox!](images/mudando_preferencias.JPG "oracle site")
+![Configurações Virtualbox!](images/mudando_preferencias.JPG "Configuração VirtualBox")
 
-![Configurações Virtualbox!](images/mudando_preferencias-2.JPG "oracle site")
+Como área padrão para criação de vms, dentro do Virtualbox:
+
+![Configurações Virtualbox!](images/mudando_preferencias-2.JPG "Configuração VirtualBox")
 
 <!-- blank line -->
 ----
@@ -89,7 +91,7 @@ c) (opcional) caso você deseje alterar as configurações básicas do Virtualbo
 <a name="3"></a>
 # 3. Vagrant
 
-Aqui deixo uma referência de comandos básicos de vagrant. Estes comandos são
+Aqui deixo uma referência de comandos básicos de vagrant. Estes comandos são executados no prompt de comando de sua preferencia (ms-dos, powershell, WSL, prompt de comando do MacOS, etc).
 
 . Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
@@ -106,6 +108,22 @@ Após a instalação do Vagrant é interessante baixar o pack de extensão de se
 ```
 vagrant plugin install vagrant-vbguest
 ```
+Além disso, em todas as atividades onde o Vagrant for utilizado adicione a linha abaixo no Vagrantfile. Essa linha adicionará a sua máquina virtual um device optico para utilizar a iso da pack de extensão do Virtualbox:
+
+```
+## add optical Driver
+  config.vm.provider "virtualbox" do |vb|
+     
+  vb.customize ["storageattach", :id, 
+                "--storagectl", "IDE Controller", 
+                "--port", "0", "--device", "1", 
+                "--type", "dvddrive", 
+                "--medium", "emptydrive"]    
+  end  
+
+```
+
+
 <!-- blank line -->
 ----
 <!-- blank line -->
@@ -114,6 +132,60 @@ vagrant plugin install vagrant-vbguest
 
 <a name="4"></a>
 # 4. Load Balancer
+Nesta atividade criaremos todas as instancias de load balancer manualmente com intuito de se ambientar com o vagrant e o conceito de load balancer. Iremos utilizar o software opensource chamado HaProxy que será instalado dentro das máquinas virtuais. Para saber mais sobre o HAProxy, visite o site [HAProxy-Documentação Oficial](http://www.haproxy.org/ "HAProxy - site oficial")
+
+No vagrant o principal arquivo é o vagrantfile que conterá os comandos da infraestrutura que você deseja provisionar.
+
+Nesta atividade executaremos uma atividade semelhante a sugerida no site [Referencia](https://medium.com/@deryrahman/haproxy-load-balancer-with-vagrant-5820a6eb8d06 "HAProxy - site oficial") e abaixo:
+
+![LoadBalancer!](images/arquiteturaLoadBalancer.JPG "Arquitetura Load Balancer")
+
+
+a) crie um diretório que hospederá o código da sua infraestrutura com um arquivo chamado vagrantfile
+```
+tutorial-haproxy
+|__ Vagrantfile
+```
+Obs. os servidores virtuais serão criados no diretório padrão. Caso necessário altere.
+
+b) Adicione o código abaixo ao seu vagrantfile:
+```
+# vi: set ft=ruby :
+
+n = 2 ## coloque aqui o numero de servidores que você terá de loadbalancer
+
+Vagrant.configure("2") do |config|
+
+  config.vm.define "loadbalancer" do |loadbalancer|
+    loadbalancer.vm.box = 'ubuntu/bionic64'
+    loadbalancer.vm.hostname = "loadbalancer"
+    loadbalancer.vm.network :private_network, ip: "192.168.10.10"
+    loadbalancer.vm.network "forwarded_port", guest: 80, host: 3000
+    loadbalancer.vm.network "forwarded_port", guest: 8404, host: 8404
+  end
+  
+  config.vm.provider "virtualbox" do |vb|
+     vb.customize ["storageattach", :id, 
+                "--storagectl", "IDE Controller", 
+                "--port", "0", "--device", "1", 
+                "--type", "dvddrive", 
+                "--medium", "emptydrive"]    
+  end  
+
+  n.times do |i|
+    config.vm.define "app-#{i+1}" do |app|
+      app.vm.box = 'deryrahman/rails-minimal'
+      app.vm.hostname = "app-#{i+1}"
+      app.vm.network :private_network, ip: "192.168.10.#{10+i+1}"
+    end
+  end
+end
+```
+
+Execute o "vagrant up" dentro do diretório com o vagrant file.
+
+Neste momento serão criados 4 servidores.
+
 
 <!-- blank line -->
 ----
@@ -124,7 +196,7 @@ vagrant plugin install vagrant-vbguest
 <a name="5"></a>
 # 5. LAMP
 
-O objetivo
+O objetivo desta atividade é provisionar um ambiente com LAMP e realizar alguns backups da camada de aplicação e banco de dados.
 
 Vá para o diretório da descompactado vagrant-projects/OracleLinux/7 
 Run vagrant status to check Vagrantfile status and possible plugin(s) required
