@@ -26,9 +26,9 @@ Para realização desta atividade, você precisará de um computador:
 - Linux
 - MacOS
 
-## Espaço livre:
+## Infraestrutura:
 Depende da atividade escolhida:
-- Cluster Oracle RAC: 150 GB espaço livre (ideal, contando download dos binários).
+- Cluster Oracle RAC: 150 GB espaço livre em disco (ideal, contando download dos binários). Minimo de 16 Gb de RAM para este laboratório.
 
 ## Downloads
 Para esta atividade utilizaremos o Virtualbox como virtualizador e o Vagrant como orquestrador. Estes downloads deverão ser realizados respectivamentes no seu computador origem.
@@ -46,6 +46,17 @@ Além disso para as atividades que vamso realizar nos próximos pontos, faça o 
 - [Oracle Database](https://www.oracle.com/database/technologies/oracle-database-software-downloads.html "Oracle Database - Download"): Caso você queira fazer a tarefa para procedimentos de banco de dados Oracle
 - [hammerDB](https://hammerdb.com/download.html "HammerDB - Download"): Para teste de carga.
 
+## Instalação
+Deverá ser instalado apenas o que for da sua máquina hospedeira (onde ficarão as VMs, ou seja:
+
+- Virtualbox
+
+- Vagrant
+
+- (Opcional) Git. Caso não queira fazer a instalação do GIT, você pode fazer o download do repositório somente
+
+Os demais binários baixados deverão
+
 <a name="2"></a>
 # 2. Configurações básicas
 
@@ -57,11 +68,14 @@ Obs. faça o download ou clone do repositório.
 
 b) O próximo passo é para ir ao diretório de cada uma das atividades. Antes de começar quaisquer atividade será mencionado o diretório que você deverá ir. Apenas para a primeira atividade de ambientação do vagrant criaremos uma infraestrutura basica com alguns conceitos.
 
+c) (opcional) caso você deseje alterar as configurações básicas do Virtualbox como área default para criação de vms, dentro
+![Configurações Virtualbox!](images/mudando_preferencias.JPG "oracle site")
+https://github.com/erikanagamine/bd-altadispcontigencia-maa-portugues/blob/2c0b883d08d8232c1eeaf9e75079cb6203bb7093/images/mudando_preferencias.JPG
 
 <a name="3"></a>
 # 3. Vagrant
 
-Após a insta
+Após a instalação do Vagrant
 
 Aqui deixo uma referência de comandos básicos de vagrant. Caso queira se aprofundar, utilize o link: [Vagrant-Documentação Oficial](https://www.vagrantup.com/docs "Vagrant - Documentação oficial")
 
