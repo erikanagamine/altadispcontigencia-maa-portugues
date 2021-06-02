@@ -7,7 +7,7 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 1. [ Pré-requisitos ](#1)
 2. [ Configurações básicas ](#2)
 3. [ Vagrant ](#3)
-4. [ IaC: LAMP ] (#4)
+4. [ IaC:LAMP ] (#4)
 5. 
 6. 
 7. 
