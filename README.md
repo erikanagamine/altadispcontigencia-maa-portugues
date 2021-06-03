@@ -198,9 +198,36 @@ echo " - ">> /var/www/html/public/index.html;
 ```
 Após tudo configurado, faça o teste de HTTP no seu browser para os IPs http://192.168.90.10. Perceba que seu servidor foi configurado. Neste momento o apache está respondendo na porta 80 para você. Suponha que essa seja a página frontend da sua aplicação.
   
-e o banco de dados? neste caso esse servidor já contem uma instalação de MySQL. Vamos acessar o MySQL atraves do comando abaixo:
-  
-criar uma tabela
+e o banco de dados? neste caso esse servidor já contem uma instalação de MySQL. Vamos acessar o MySQL (verifique antes se você está com o root, caso contrário use o "sudo su -"):
+```
+mysql -uroot -p  
+```
+Ele irá te pedir a senha que é "password". Insira a senha.
+
+Vamos verificar quais databases existem neste mysql, com o comando show databases;
+
+![Configurações Mysql!](images/mysql_databases.png "database no mysql")
+
+Perceba que há 4 databases. Vamos utilizar o database dev neste exemplo. Para utilizado digite no mysql:
+
+```
+use dev;
+```
+Verifique quais tabelas este banco de dados tem com o comando "show tables":
+```
+show tables
+```
+Como não há tabelas, vamos criar uma tabela com create table:
+```
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+ 
+```
   
 fazer um backup
   
