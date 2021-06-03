@@ -168,6 +168,7 @@ tutorial-lamp
 Obs. os servidores virtuais serão criados no diretório padrão. Caso necessário altere.
 
 b) Adicione o código abaixo ao seu vagrantfile:
+ 
 ```
 Vagrant.configure("2") do |config|
 
@@ -234,6 +235,7 @@ tutorial-haproxy
 Obs. os servidores virtuais serão criados no diretório padrão. Caso necessário altere.
 
 b) Adicione o código abaixo ao seu vagrantfile:
+  
 ```
 # vi: set ft=ruby :
 
