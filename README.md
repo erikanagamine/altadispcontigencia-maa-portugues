@@ -8,9 +8,9 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 2. [ Configurações básicas ](#2)
 3. [ Vagrant ](#3)
 4. [ Linux ](#4)
-5. [ Load Balancer ](#5)
-6. [ LAMP ](#6)
-7. [ Oracle Database: Backup, Restore e outras técnicas ](#7)
+5. [ LAMP ](#5)
+6. [ Load Balancer ](#6)
+7. [ Oracle Database: single instance ](#7)
 8. [ Oracle Database: Data Guard ](#8)
 9. [ Oracle Database: RAC ](#9)
 10. [ Microservices, Serveless, Cloud ](#10)
@@ -152,9 +152,71 @@ sudo su - | permite que o usuário tenha privilégios administrativos
 <!-- blank line -->
 
 [ Retornar para o menu ](#top)
-
+  
 <a name="5"></a>
-# 5. Load Balancer
+# 5. LAMP
+
+O objetivo desta atividade é provisionar um ambiente com LAMP e realizar alguns backups da camada de aplicação e banco de dados.
+
+Vá para o diretório da descompactado vagrant-projects/OracleLinux/7
+
+a) crie um diretório que hospederá o código da sua infraestrutura com um arquivo chamado vagrantfile
+```
+tutorial-lamp
+|__ Vagrantfile
+```
+Obs. os servidores virtuais serão criados no diretório padrão. Caso necessário altere.
+
+b) Adicione o código abaixo ao seu vagrantfile:
+```
+Vagrant.configure("2") do |config|
+
+  config.vm.define "lamp" do |lamp|
+    lamp.vm.box = 'chrislentz/trusty64-lamp'
+    lamp.vm.hostname = "lamp"
+    lamp.vm.network :private_network, ip: "192.168.90.10"
+    lamp.vm.network "forwarded_port", guest: 80, host: 3000
+    lamp.vm.network "forwarded_port", guest: 8404, host: 8404
+  end
+end
+```
+
+Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação provisionará 1 máquinas virtuais (ou VM - Virtual Machine) e levará cerca de 10 min (o tempo depende da máquina host com 1 Gb de RAM e 40 GB de espaço virtual.
+  
+Como próximo passo, vamos acessar VM app-1 via comando "vagrant ssh lamp" para configurar uma página persoalizada. Dentro da VM, digite para subir os privilégios de administrador:
+```
+sudo su -
+``
+Após isso personalize a pagina:
+```
+echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
+echo " - ">> /var/www/html/public/index.html;
+echo "Page creation date: <b>" `date `"</b>" >> /var/www/html/public/index.html;
+echo " - ">> /var/www/html/public/index.html;
+```
+Após tudo configurado, faça o teste de HTTP no seu browser para os IPs http://192.168.90.10. Perceba que seu servidor foi configurado. Neste momento o apache está respondendo na porta 80 para você. Suponha que essa seja a página frontend da sua aplicação.
+  
+e o banco de dados? neste caso esse servidor já contem uma instalação de MySQL. Vamos acessar o MySQL atraves do comando abaixo:
+  
+criar uma tabela
+  
+fazer um backup
+  
+apagar simulando um erro acidental
+  
+restaurando a informação
+  
+Checando no banco de dados
+
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Retornar para o menu ](#top)
+
+<a name="6"></a>
+# 6. Load Balancer
 Nesta atividade criaremos todas as instancias de load balancer manualmente com intuito de se ambientar com o vagrant e o conceito de load balancer. Iremos utilizar o software opensource chamado HaProxy que será instalado dentro das máquinas virtuais. Para saber mais sobre o HAProxy, visite o site [HAProxy-Documentação Oficial](http://www.haproxy.org/ "HAProxy - site oficial")
 
 No vagrant o principal arquivo é o vagrantfile que conterá os comandos da infraestrutura que você deseja provisionar.
@@ -187,17 +249,9 @@ Vagrant.configure("2") do |config|
     loadbalancer.vm.network "forwarded_port", guest: 8404, host: 8404
   end
   
-  config.vm.provider "virtualbox" do |vb|
-     vb.customize ["storageattach", :id, 
-                "--storagectl", "IDE Controller", 
-                "--port", "0", "--device", "1", 
-                "--type", "dvddrive", 
-                "--medium", "emptydrive"]    
-  end  
-
   n.times do |i|
     config.vm.define "app-#{i+1}" do |app|
-      app.vm.box = 'ubuntu/bionic64'
+      app.vm.box = 'chrislentz/trusty64-lamp'
       app.vm.hostname = "app-#{i+1}"
       app.vm.network :private_network, ip: "192.168.10.#{10+i+1}"
     end
@@ -206,6 +260,21 @@ end
 ```
 
 Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação provisionará 3 máquinas virtuais (ou VM - Virtual Machine) e levará cerca de 20 min (o tempo depende da máquina host. Cada VM tem 1 Gb de RAM e 40 GB de espaço virtual.
+  
+Como próximo passo, vamos acessar VM app-1 via comando "vagrant ssh app-1" para configurar uma página persoalizada. Dentro da VM, digite para subir os privilégios de administrador:
+```
+sudo su -
+``
+Após isso personalize a pagina:
+```
+echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
+echo " - ">> /var/www/html/public/index.html;
+echo "Page creation date: <b>" `date `"</b>" >> /var/www/html/public/index.html;
+echo " - ">> /var/www/html/public/index.html;
+```
+Saia do servidor app-1 com o comando "exit" e repita o processo  para o servidor 2.
+
+Após tudo configurado, faça o teste de HTTP no seu browser para os IPs http://192.168.10.11 e http://192.168.10.12
 
 Após o provisionamento, acesse a máquina virtual do load balancer com o comando "vagrant ssh loadbalancer" para instalarmos o HAProxy:
 
@@ -221,8 +290,8 @@ sudo vi /etc/haproxy/haproxy.cfg
 Edição do haproxy.cfg
 ```
 backend apps
-  server app1 192.168.10.11:3000 check
-  server app2 192.168.10.12:3000 check
+  server app1 192.168.10.11:80 check
+  server app2 192.168.10.12:80 check
 
 frontend main
   bind *:80
@@ -240,6 +309,9 @@ Salve as configurações do arquivo e faça o reload do processo do haproxy:
 sudo systemctl reload haproxy
 ```
 
+Saia da máquina virtual do loadbalancer e no seu computador visite o site: http://192.168.10.10 (servidor do load balancer). Deverá aparecer a página de um dos servidores de aplicação. Com isso a configuração está concluida. Vamos fazer o teste baixando um dos servidores (perceba no rodapé da página qual dos servidores está sendo responsivel pela pagina e execute o comando halt no vagrant "vagrant halt app-1".
+  
+Perceba que o servidor foi baixado e automaticamente o servidor de loadbalancer passará a responder pelo servidor app-2 e vice versa. Repita o teste subindo o servidor que estava down e baixando o outro.
 
 
 <!-- blank line -->
@@ -248,8 +320,8 @@ sudo systemctl reload haproxy
 
 [ Retornar para o menu ](#top)
 
-<a name="6"></a>
-# 6. LAMP
+<a name="7"></a>
+# 7. Oracle Database
 
 O objetivo desta atividade é provisionar um ambiente com LAMP e realizar alguns backups da camada de aplicação e banco de dados.
 
