@@ -13,7 +13,7 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 7. [ Oracle Database: single instance ](#7)
 8. [ Oracle Database: Data Guard ](#8)
 9. [ Oracle Database: RAC ](#9)
-10. [ Microservices, Serveless, Cloud ](#10)
+10. [ Microservices, Serverless, Cloud ](#10)
 
 <a name="1"></a>
 # 1. Pré-requisitos
