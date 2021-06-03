@@ -28,6 +28,7 @@ Para realização desta atividade, você precisará de acesso a internet (de pre
 
 ## Infraestrutura:
 Depende da atividade escolhida:
+- Load Balancer: 10 Gb de espaço livre em disco + 4 GB de RAM.
 - Cluster Oracle RAC: 150 GB espaço livre em disco (ideal, contando download dos binários). Minimo de 16 Gb de RAM para este laboratório.
 
 ## Downloads
@@ -174,7 +175,7 @@ Vagrant.configure("2") do |config|
 
   n.times do |i|
     config.vm.define "app-#{i+1}" do |app|
-      app.vm.box = 'deryrahman/rails-minimal'
+      app.vm.box = 'ubuntu/bionic64'
       app.vm.hostname = "app-#{i+1}"
       app.vm.network :private_network, ip: "192.168.10.#{10+i+1}"
     end
@@ -182,9 +183,9 @@ Vagrant.configure("2") do |config|
 end
 ```
 
-Execute o "vagrant up" dentro do diretório com o vagrant file.
+Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação provisionará 3 máquinas virtuais (ou VM - Virtual Machine) e levará cerca de 20 min (o tempo depende da máquina host. Cada VM tem 1 Gb de RAM e 40 GB de espaço virtual.
 
-Neste momento serão criados 4 servidores.
+Após o provisionamento, acesse a máquina virtual do load balancer com o comando 
 
 
 <!-- blank line -->
