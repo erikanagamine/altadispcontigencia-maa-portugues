@@ -7,14 +7,13 @@ O objetivo deste repositório é apresentar técnicas de contigência e alta dis
 1. [ Pré-requisitos ](#1)
 2. [ Configurações básicas ](#2)
 3. [ Vagrant ](#3)
-4. [ Load Balancer ](#4)
-5. [ LAMP ](#5)
-6. [ Oracle Database: Backup, Restore e outras técnicas ](#6)
-7. [ Oracle Database: Data Guard ](#7)
-8. [ Oracle Database: RAC ](#8)
-9. [ Microservices, Serveless ](#9)
-10. [ Cloud ](#9)
-
+4. [ Linux ](#4)
+5. [ Load Balancer ](#5)
+6. [ LAMP ](#6)
+7. [ Oracle Database: Backup, Restore e outras técnicas ](#7)
+8. [ Oracle Database: Data Guard ](#8)
+9. [ Oracle Database: RAC ](#9)
+10. [ Microservices, Serveless, Cloud ](#10)
 
 <a name="1"></a>
 # 1. Pré-requisitos
@@ -132,7 +131,30 @@ Além disso, em todas as atividades onde o Vagrant for utilizado adicione a linh
 [ Retornar para o menu ](#top)
 
 <a name="4"></a>
-# 4. Load Balancer
+# 4. Linux
+
+Nesta sessão relaciono os comandos básicos de sistema operacional Linux.
+
+Comando a ser utilizado no prompt | Utilidade
+------------ | -------------
+ssh <servidor> | acessa o servidor
+vi <arquivo> | edita/visualiza o arquivo
+netstat | visualiza os processos que estão com portas ativas no sistema operacional
+systemctl reload <processo> | reinicia o processo no SO
+systemctl status <processo> | mostra status no SO
+ps -ef | visualiza lista de processos ativos no SO
+sudo su - | permite que o usuário tenha privilégios administrativos
+
+
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Retornar para o menu ](#top)
+
+<a name="5"></a>
+# 5. Load Balancer
 Nesta atividade criaremos todas as instancias de load balancer manualmente com intuito de se ambientar com o vagrant e o conceito de load balancer. Iremos utilizar o software opensource chamado HaProxy que será instalado dentro das máquinas virtuais. Para saber mais sobre o HAProxy, visite o site [HAProxy-Documentação Oficial](http://www.haproxy.org/ "HAProxy - site oficial")
 
 No vagrant o principal arquivo é o vagrantfile que conterá os comandos da infraestrutura que você deseja provisionar.
@@ -185,7 +207,39 @@ end
 
 Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação provisionará 3 máquinas virtuais (ou VM - Virtual Machine) e levará cerca de 20 min (o tempo depende da máquina host. Cada VM tem 1 Gb de RAM e 40 GB de espaço virtual.
 
-Após o provisionamento, acesse a máquina virtual do load balancer com o comando 
+Após o provisionamento, acesse a máquina virtual do load balancer com o comando "vagrant ssh loadbalancer" para instalarmos o HAProxy:
+
+```
+sudo apt -y install haproxy
+```
+Dentro da VM do loadbalancer ainda, edite o arquivo de configuração /etc/haproxy/haproxy.cfg para apontar para os backend/frontend set e alimentar as estatisticas do proxy
+
+Comando para acessar o editor do arquivo:
+```
+sudo vi /etc/haproxy/haproxy.cfg
+```
+Edição do haproxy.cfg
+```
+backend apps
+  server app1 192.168.10.11:3000 check
+  server app2 192.168.10.12:3000 check
+
+frontend main
+  bind *:80
+  use_backend apps
+
+listen stats
+  bind *:8404
+  stats enable
+  stats uri /monitor
+  
+```
+
+Salve as configurações do arquivo e faça o reload do processo do haproxy:
+```
+sudo systemctl reload haproxy
+```
+
 
 
 <!-- blank line -->
@@ -194,8 +248,8 @@ Após o provisionamento, acesse a máquina virtual do load balancer com o comand
 
 [ Retornar para o menu ](#top)
 
-<a name="5"></a>
-# 5. LAMP
+<a name="6"></a>
+# 6. LAMP
 
 O objetivo desta atividade é provisionar um ambiente com LAMP e realizar alguns backups da camada de aplicação e banco de dados.
 
