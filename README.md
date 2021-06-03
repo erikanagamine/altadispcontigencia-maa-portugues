@@ -187,7 +187,8 @@ Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação prov
 Como próximo passo, vamos acessar VM app-1 via comando "vagrant ssh lamp" para configurar uma página persoalizada. Dentro da VM, digite para subir os privilégios de administrador:
 ```
 sudo su -
-``
+```
+
 Após isso personalize a pagina:
 ```
 echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
@@ -266,7 +267,7 @@ Execute o "vagrant up" dentro do diretório com o vagrant file. Esta ação prov
 Como próximo passo, vamos acessar VM app-1 via comando "vagrant ssh app-1" para configurar uma página persoalizada. Dentro da VM, digite para subir os privilégios de administrador:
 ```
 sudo su -
-``
+```
 Após isso personalize a pagina:
 ```
 echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
