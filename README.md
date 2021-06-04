@@ -216,19 +216,37 @@ Verifique quais tabelas este banco de dados tem com o comando "show tables":
 ```
 show tables
 ```
-Como não há tabelas, vamos criar uma tabela com create table:
+
+Perceba que esse banco está sem dados. Vamos restaurar um database de exemplo. Saia do mysql com o comando "exit" e volte para o prompt de comando como root e vá para o diretório /tmp:
 ```
-CREATE TABLE Persons (
-    PersonID int,
-    LastName varchar(255),
-    FirstName varchar(255),
-    Address varchar(255),
-    City varchar(255)
-);
- 
+cd /tmp/
 ```
-  
-fazer um backup
+no diretório /tmp, vamos fazer o download de um database de teste:
+```
+wget https://github.com/datacharmer/test_db/archive/refs/heads/master.zip
+```
+Descompacte o arquivo zip, com o comando zip:
+```
+unzip https://github.com/datacharmer/test_db/archive/refs/heads/master.zip
+```
+Obs: caso o unzip não esteja instalado, use o comando abaixo para instalar o pacote e repita a operação:
+```
+apt-get update -y;
+apt-get install unzip
+```
+Entre no diretório test_db-master:
+```
+cd test_db-master
+```
+Restaure o database de exemplo com o comando "mysql -t"
+```
+mysql -p < employees.sql
+```
+Conecte novamente no mysql e verifique que agora temos 5 databases ao invés de 4. vamos explorar mais o database de 'employees':
+```
+use employees
+```
+
   
 apagar simulando um erro acidental
   
