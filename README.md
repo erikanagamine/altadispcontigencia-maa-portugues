@@ -259,6 +259,8 @@ Vamos fazer nosso primeiro backup no mysql:
 
 ```
 mysqldump -p employees > employees_full.dmp
+  
+mysqldump -p employees > employees_full.dmp
 ```
                                            
 apague registros da tabela salaries:
