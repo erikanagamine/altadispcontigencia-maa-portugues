@@ -191,10 +191,9 @@ sudo su -
 
 Após isso personalize a pagina:
 ```
-echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
-echo " - ">> /var/www/html/public/index.html;
-echo "Page creation date: <b>" `date `"</b>" >> /var/www/html/public/index.html;
-echo " - ">> /var/www/html/public/index.html;
+cd /var/www/html/public
+rm *.html
+wget https://raw.githubusercontent.com/erikanagamine/altadispcontigencia-maa-portugues/main/images/index.html
 ```
 Após tudo configurado, faça o teste de HTTP no seu browser para os IPs http://192.168.90.10. Perceba que seu servidor foi configurado. Neste momento o apache está respondendo na porta 80 para você. Suponha que essa seja a página frontend da sua aplicação.
   
@@ -297,10 +296,10 @@ sudo su -
 ```
 Após isso personalize a pagina:
 ```
-echo "Server: <b>"`hostname `"</b>" >> /var/www/html/public/index.html;
-echo " - ">> /var/www/html/public/index.html;
-echo "Page creation date: <b>" `date `"</b>" >> /var/www/html/public/index.html;
-echo " - ">> /var/www/html/public/index.html;
+cd /var/www/html/public
+rm *.html
+wget https://raw.githubusercontent.com/erikanagamine/altadispcontigencia-maa-portugues/main/images/index.html
+
 ```
 Saia do servidor app-1 com o comando "exit" e repita o processo  para o servidor 2.
 
