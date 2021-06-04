@@ -225,7 +225,7 @@ no diretório /tmp, vamos fazer o download de um database de teste:
 ```
 wget https://github.com/datacharmer/test_db/archive/refs/heads/master.zip
 ```
-Descompacte o arquivo zip, com o comando zip:
+Descompacte o arquivo zip, com o comando zip (este database de exemplo está disponivel em [Github oficial](https://github.com/datacharmer/test_db "Mysql database de exemplo"):
 ```
 unzip https://github.com/datacharmer/test_db/archive/refs/heads/master.zip
 ```
@@ -238,10 +238,16 @@ Entre no diretório test_db-master:
 ```
 cd test_db-master
 ```
-Restaure o database de exemplo com o comando "mysql -t"
+Restaure o database de exemplo com o comando "mysql -p"
 ```
 mysql -p < employees.sql
 ```
+Teste o restore do database com os comandos abaixo:
+```
+mysql -uroot -p -t < test_employees_md5.sql
+mysql -uroot -p -t < test_employees_sha.sql
+```                     
+
 Conecte novamente no mysql e verifique que agora temos 5 databases ao invés de 4. vamos explorar mais o database de 'employees':
 ```
 use employees
