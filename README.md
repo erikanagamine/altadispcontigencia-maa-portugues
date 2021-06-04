@@ -247,13 +247,22 @@ Teste o restore do database com os comandos abaixo:
 mysql -uroot -p -t < test_employees_md5.sql
 mysql -uroot -p -t < test_employees_sha.sql
 ```                     
-
 Conecte novamente no mysql e verifique que agora temos 5 databases ao invés de 4. vamos explorar mais o database de 'employees':
 ```
 use employees
 ```
+verifique a quantidade de registros da tabela salaries:
+```
+select count(1) from salaries;
+```
+Vamos fazer nosso primeiro backup no mysql:
 
-  
+```
+mysqldump -p employees > employees_full.dmp
+```
+                                           
+apague registros da tabela salaries:
+                                           
 apagar simulando um erro acidental
   
 restaurando a informação
