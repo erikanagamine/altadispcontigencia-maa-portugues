@@ -272,7 +272,7 @@ values
 
 Insert into Persons
 values
-(1,'Silva', 'Joao', 'Rua do paraiso 20','Sao Paulo');
+(2,'Silva', 'Maria', 'Rua do paz 80','Sao Paulo');
                                            
 ```                                           
                                            
