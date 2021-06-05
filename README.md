@@ -104,7 +104,8 @@ vagrant up | executa código para criação das suas VMs ou inicia sua infra-est
 vagrant destroy | apaga todas suas VMs contidas no código que foi executado
 vagrant halt | realiza o desligamento de toda a sua infraestrutura provisionada como código.
 vagrant ssh | para acessar a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina hospedeira você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
-vagrant plugin install | para instalação de plugins no vagrant 
+vagrant plugin install | para instalação de plugins no vagrant
+vagrant status | Para saber o status da sua maquina virtual ou stack
 
 Após a instalação do Vagrant é interessante baixar o pack de extensão de servidores guest do VirtualBox, assim suas máquinas virtuais já estarão com as boas práticas aplicadas:
 ```
