@@ -434,9 +434,13 @@ d) execute "vagrant up" para provisionar o ambiente
   
 Obs. Garanta que há acesso a internet e espaço para provisionamento. Caso contrário vá para as instruções no inicio deste documento. Caso queira realizar alguma customização pode realizar no arquivo .env presente no diretório raiz. Esta atividade leva cerca de 1h para ser executada (dependedo seu computador)
 
-![Configurações vagrant!](images/Oracle_single_instance_install.png "status no vagrant")
+![Configurações Oracle Single Instance!](images/Oracle_single_instance_install.png "status do Oracle single instance provisionado")
 
 Faça análise do ambiente provisionado acessando através do comando "vagrant ssh oracle-19c-vagrant"
+
+![Configurações Oracle Single Instance!](images/Oracle_single_instance_analise.png "status do Oracle single instance provisionado")
+
+
 
 <!-- blank line -->
 ----
