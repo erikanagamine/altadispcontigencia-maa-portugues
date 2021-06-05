@@ -419,10 +419,14 @@ Perceba que o servidor foi baixado e automaticamente o servidor de loadbalancer 
 O objetivo desta atividade é provisionar um ambiente single instance e realizar alguns backups do banco de dados.
 
 a) Vá para o diretório da descompactado vagrant-projects/\OracleDatabase\19.3.0
+  
 b) coloque o binário LINUX.X64_193000_db_home.zip no diretório
-b) execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+  
+c) execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
   ![Configurações vagrant!](images/vagrant_status.png "status no vagrant")
-c) execute "vagrant up" para provisionar o ambiente
+  
+d) execute "vagrant up" para provisionar o ambiente
+  
 Obs. Garanta que há acesso a internet e espaço para provisionamento. Caso contrário vá para as instruções no inicio deste documento.
 
 
