@@ -243,6 +243,8 @@ Restaure o database de exemplo com o comando "mysql -p"
 ```
 mysql -p < employees.sql
 ```
+![Configurações Mysql!](images/mysql_database_import.png "database no mysql")                        
+                        
 Teste o restore do database com os comandos abaixo:
 ```
 mysql -uroot -p -t < test_employees_md5.sql
