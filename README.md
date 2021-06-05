@@ -29,6 +29,7 @@ Para realização desta atividade, você precisará de acesso a internet (de pre
 Depende da atividade escolhida:
 - LAMP: 4 Gb de espaço livre em disco + 1 GB de RAM.
 - Load Balancer: 10 Gb de espaço livre em disco + 4 GB de RAM.
+- Oracle Single Instance: 15 GB de espaço livre em disco + 2 GB de RAM
 - Cluster Oracle RAC: 150 GB espaço livre em disco (ideal, contando download dos binários). Minimo de 16 Gb de RAM para este laboratório.
 
 ## Downloads
