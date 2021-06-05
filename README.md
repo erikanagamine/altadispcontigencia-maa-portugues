@@ -255,21 +255,50 @@ verifique a quantidade de registros da tabela salaries:
 ```
 select count(1) from salaries;
 ```
+Crie objetos e insira dados para serem contemplados em nosso backup:
+```
+CREATE TABLE Persons (
+    PersonID int,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Address varchar(255),
+    City varchar(255)
+);
+ 
+Insert into Persons
+values
+(1,'Silva', 'Joao', 'Rua do paraiso 20','Sao Paulo');
+
+Insert into Persons
+values
+(1,'Silva', 'Joao', 'Rua do paraiso 20','Sao Paulo');
+                                           
+```                                           
+                                           
 Vamos fazer nosso primeiro backup no mysql:
 
 ```
 mysqldump -p employees > employees_full.dmp
   
-mysqldump -p employees > employees_full.dmp
 ```
                                            
-apague registros da tabela salaries:
-                                           
-apagar simulando um erro acidental
+apague o database employees:
+```
+mysql -uroot -p
   
-restaurando a informação
+drop database employees;
+```   
+Restaure as informações do database employee:
+
+
+```
+mysql -p employees < employees_full.dmp
   
-Checando no banco de dados
+```
+Verifique se os dados foram recuperados com sucesso, realizando uma consulta na tabela Persons:
+```
+select count(1) from Persons;
+```
 
 
 <!-- blank line -->
@@ -387,15 +416,14 @@ Perceba que o servidor foi baixado e automaticamente o servidor de loadbalancer 
 <a name="7"></a>
 # 7. Oracle Database
 
-O objetivo desta atividade é provisionar um ambiente com LAMP e realizar alguns backups da camada de aplicação e banco de dados.
+O objetivo desta atividade é provisionar um ambiente single instance e realizar alguns backups do banco de dados.
 
-Vá para o diretório da descompactado vagrant-projects/OracleLinux/7 
-Run vagrant status to check Vagrantfile status and possible plugin(s) required
-Run vagrant up
-The first time you run this it will provision everything and may take a while. Ensure you have a good internet connection!
-The Vagrant file allows for customization.
-SSH into the VM either by using vagrant ssh If required, by Vagrantfile you can also setup ssh port forwarding.
-You can shut down the VM via the usual vagrant halt and the start it up again via vagrant up.
+a) Vá para o diretório da descompactado vagrant-projects/\OracleDatabase\19.3.0
+b) execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+  ![Configurações vagrant!](images/vagrant_status.png "status no vagrant")
+c) execute "vagrant up" para provisionar o ambiente
+Obs. Garanta que há acesso a internet e espaço para provisionamento. Caso contrário vá para as instruções no inicio deste documento.
+
 
 <!-- blank line -->
 ----
