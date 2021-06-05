@@ -1,4 +1,4 @@
-# Procedimentos de contingência e alta disponiblidade
+# Procedimentos de contingência e alta disponibilidade
 
 O objetivo deste repositório é apresentar técnicas de contigência e alta disponibilidade. Fique a vontade de submeter melhorias em issues ou até copiar o procedimento (apenas mencione a fonte!)
 
