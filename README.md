@@ -460,9 +460,9 @@ a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0
 b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
 
 c) No diretório vagrant-projects/OracleDG execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
-  ![Configurações vagrant!](images/vagrant_status.png "status no vagrant")
+  ![Configurações vagrant!](images/Oracle_dataguard_analise.png "status no vagrant")
   
-d) execute "vagrant up" para provisionar o ambiente
+d) execute "vagrant up" para provisionar o ambiente ![Configurações vagrant!](images/Oracle_dataguard_install.png "status no vagrant")
 
 
 <!-- blank line -->
