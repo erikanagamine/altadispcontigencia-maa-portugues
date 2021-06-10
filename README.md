@@ -463,6 +463,10 @@ c) No diretório vagrant-projects/OracleDG execute "vagrant status" para checar 
   ![Configurações vagrant!](images/Oracle_dataguard_analise.png "status no vagrant")
   
 d) execute "vagrant up" para provisionar o ambiente ![Configurações vagrant!](images/Oracle_dataguard_install.png "status no vagrant")
+  
+  Note que está sendo configurado o data guard:
+  
+  ![Configurações vagrant!](images/Oracle_dataguard_config.png "status no vagrant")
 
 
 <!-- blank line -->
