@@ -419,9 +419,9 @@ Perceba que o servidor foi baixado e automaticamente o servidor de loadbalancer 
 [ Retornar para o menu ](#top)
 
 <a name="7"></a>
-# 7. Oracle Database
+# 7. Oracle Database: single instance
 
-O objetivo desta atividade é provisionar um ambiente single instance e realizar alguns backups do banco de dados.
+O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
 
 a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fezm visite o tópico configurações básicas presentes no documento.
   
@@ -429,10 +429,10 @@ b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-p
 
 c) Faça o download do script https://raw.githubusercontent.com/erikanagamine/altadispcontigencia-maa-portugues/main/scripts/install.sh_19cRenomear para seu computador local e o coloque dentro do diretório vagrant-projects/OracleDatabase/19.3.0/scripts e renomei-o (substituindo o arquivo install.sh)
   
-c) No diretório vagrant-projects/OracleDatabase/19.3.0, execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+d) No diretório vagrant-projects/OracleDatabase/19.3.0, execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
   ![Configurações vagrant!](images/vagrant_status.png "status no vagrant")
   
-d) execute "vagrant up" para provisionar o ambiente
+e) execute "vagrant up" para provisionar o ambiente
   
 Obs. Garanta que há acesso a internet e espaço para provisionamento. Caso contrário vá para as instruções no inicio deste documento. Caso queira realizar alguma customização pode realizar no arquivo .env presente no diretório raiz. Esta atividade leva cerca de 1h para ser executada (dependedo seu computador)
 
@@ -443,6 +443,45 @@ Faça análise do ambiente provisionado acessando através do comando "vagrant s
 ![Configurações Oracle Single Instance!](images/Oracle_single_instance_analise.png "status do Oracle single instance provisionado")
 
 
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Retornar para o menu ](#top)
+  
+<a name="8"></a>
+# 8. Oracle Database: Data Guard
+
+O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
+
+a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fezm visite o tópico configurações básicas presentes no documento.
+  
+b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
+
+c) No diretório vagrant-projects/OracleDG execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+  ![Configurações vagrant!](images/vagrant_status.png "status no vagrant")
+  
+d) execute "vagrant up" para provisionar o ambiente
+
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Retornar para o menu ](#top)
+  
+<a name="9"></a>
+# 9. Oracle Database: RAC
+
+<!-- blank line -->
+----
+<!-- blank line -->
+
+[ Retornar para o menu ](#top)
+
+<a name="10"></a>
+# 10. Microservices, Serverless, Cloud
 
 <!-- blank line -->
 ----
