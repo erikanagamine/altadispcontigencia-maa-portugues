@@ -483,6 +483,26 @@ Observação: caso necessite alterar alguma configuração, como quantidade de m
 <a name="9"></a>
 # 9. Oracle Database: RAC
 
+O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
+
+a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fezm visite o tópico configurações básicas presentes no documento.
+  
+b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
+
+c) No diretório vagrant-projects/OracleDG execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+  ![Configurações vagrant!](images/Oracle_dataguard_analise.png "status no vagrant")
+  
+d) execute "vagrant up" para provisionar o ambiente ![Configurações vagrant!](images/Oracle_dataguard_install.png "status no vagrant")
+  
+  Note que está sendo configurado o data guard:
+  
+  ![Configurações vagrant!](images/Oracle_dataguard_config.png "status no vagrant")
+
+Observação: caso necessite alterar alguma configuração, como quantidade de memória que as VMs irão possuir, altere o arquivo de configuração presente em vagrant-projects/OracleDG/config , arquivo vagrant.yml
+
+![Configurações vagrant!](images/configuracoes_adicionais.png "status no vagrant")
+
+  
 <!-- blank line -->
 ----
 <!-- blank line -->
