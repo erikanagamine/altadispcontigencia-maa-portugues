@@ -468,6 +468,11 @@ d) execute "vagrant up" para provisionar o ambiente ![Configurações vagrant!](
   
   ![Configurações vagrant!](images/Oracle_dataguard_config.png "status no vagrant")
 
+Observação: caso necessite alterar alguma configuração, como quantidade de memória que as VMs irão possuir, altere o arquivo de configuração presente em vagrant-projects/OracleDG/config , arquivo vagrant.yml
+
+![Configurações vagrant!](images/configuracoes_adicionais.png "status no vagrant")
+
+
 
 <!-- blank line -->
 ----
