@@ -106,6 +106,7 @@ vagrant halt | realiza o desligamento de toda a sua infraestrutura provisionada 
 vagrant ssh | para acessar a máquina virtual. Pode ser combinada com o nome do servidor, exemplo: vagrant ssh ol7-vagrant (observação se na sua máquina hospedeira você utiliza windows, utilize "set VAGRANT_PREFER_SYSTEM_BIN=0" antes do comando vagrant ssh para forçar a utilização de ssh, nao rsync)
 vagrant plugin install | para instalação de plugins no vagrant
 vagrant status | Para saber o status da sua maquina virtual ou stack
+vagrant global-status | Para saber o status de todas as máquinas virtuais provisionadas
 
 Após a instalação do Vagrant é interessante baixar o pack de extensão de servidores guest do VirtualBox, assim suas máquinas virtuais já estarão com as boas práticas aplicadas:
 ```
@@ -455,7 +456,7 @@ Faça análise do ambiente provisionado acessando através do comando "vagrant s
 
 O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
 
-a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fezm visite o tópico configurações básicas presentes no documento.
+a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fez visite o tópico configurações básicas presentes no documento.
   
 b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
 
@@ -485,7 +486,7 @@ Observação: caso necessite alterar alguma configuração, como quantidade de m
 
 O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
 
-a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fezm visite o tópico configurações básicas presentes no documento.
+a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fez visite o tópico configurações básicas presentes no documento.
   
 b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
 
