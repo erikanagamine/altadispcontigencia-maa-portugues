@@ -456,7 +456,7 @@ Faça análise do ambiente provisionado acessando através do comando "vagrant s
 
 O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
 
-a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fez visite o tópico configurações básicas presentes no documento.
+a) Vá para o diretório da descompactado vagrant-projects/OracleDG (se ainda não o fez visite o tópico configurações básicas presentes no documento.
   
 b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
 
@@ -486,11 +486,11 @@ Observação: caso necessite alterar alguma configuração, como quantidade de m
 
 O objetivo desta atividade é provisionar um ambiente single instance e simular recuperações de ambiente no mesmo servidor (que no nosso caso é uma VM).
 
-a) Vá para o diretório da descompactado vagrant-projects/OracleDatabase/19.3.0 (se ainda não o fez visite o tópico configurações básicas presentes no documento.
+a) Vá para o diretório da descompactado vagrant-projects/OracleRAC (se ainda não o fez visite o tópico configurações básicas presentes no documento.
   
-b) coloque o binário LINUX.X64_193000_db_home.zip no diretório raiz (vagrant-projects/OracleDG/ORCL_software)
+b) coloque o binário LINUX.X64_193000_db_home.zip e LINUX.X64_193000_grid_home.zip no diretório raiz (vagrant-projects/OracleRAC/ORCL_software)
 
-c) No diretório vagrant-projects/OracleDG execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
+c) No diretório vagrant-projects/OracleRAC execute "vagrant status" para checar vagrantfile e possiveis plugins que devam ser instalados
   ![Configurações vagrant!](images/Oracle_dataguard_analise.png "status no vagrant")
   
 d) execute "vagrant up" para provisionar o ambiente ![Configurações vagrant!](images/Oracle_dataguard_install.png "status no vagrant")
