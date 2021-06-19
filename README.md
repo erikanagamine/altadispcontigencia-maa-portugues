@@ -473,8 +473,11 @@ Observação: caso necessite alterar alguma configuração, como quantidade de m
 
 ![Configurações vagrant!](images/configuracoes_adicionais.png "status no vagrant")
 
-Caso você queira configurar um Data Guard manualmente, segue um passo a passo:
+Obs: Caso você queira configurar um Data Guard manualmente, segue um passo a passo:
   https://oracle-base.com/articles/19c/data-guard-setup-using-broker-19c
+  
+  As senhas do ambiente são: welcome1
+
   
 
 <!-- blank line -->
@@ -505,6 +508,10 @@ Observação: caso necessite alterar alguma configuração, como quantidade de m
 
 ![Configurações vagrant!](images/configuracoes_adicionais.png "status no vagrant")
 
+  Obs: Caso você queira configurar um RAC manualmente, segue um passo a passo:
+  https://oracle-base.com/articles/19c/oracle-db-19c-rac-installation-on-oracle-linux-7-using-virtualbox
+  
+  As senhas do ambiente são: welcome1
   
 <!-- blank line -->
 ----
